@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dairy4">
+    <Key>
+      <PropertyRef Name="DairyId" />
+    </Key>
+    <Property Name="DairyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DairyNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileId" Type="int" />
+    <Property Name="SyncState" Type="bit" />
+    <Property Name="DealerId" Type="int" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastSyncDate" Type="date" />
+    <Property Name="DeviceId" Type="nvarchar" MaxLength="50" />
+    <Property Name="FCMToken" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceModel" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="AndroidVersion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refferalld" Type="int" />
+    <Property Name="ReferralAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="WithdrawAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsSubscribe" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Dairy4" EntityType="Self.Dairy4" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Mlik_DairyEntities">
+    <EntitySetMapping Name="Dairy4">
+      <EntityTypeMapping TypeName="Model.Dairy4">
+        <MappingFragment StoreEntitySet="Dairy4">
+          <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="DairyNumber" ColumnName="DairyNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+          <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastSyncDate" ColumnName="LastSyncDate" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="FCMToken" ColumnName="FCMToken" />
+          <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+          <ScalarProperty Name="DeviceCompany" ColumnName="DeviceCompany" />
+          <ScalarProperty Name="AndroidVersion" ColumnName="AndroidVersion" />
+          <ScalarProperty Name="Refferalld" ColumnName="Refferalld" />
+          <ScalarProperty Name="ReferralAmount" ColumnName="ReferralAmount" />
+          <ScalarProperty Name="WithdrawAmount" ColumnName="WithdrawAmount" />
+          <ScalarProperty Name="IsSubscribe" ColumnName="IsSubscribe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

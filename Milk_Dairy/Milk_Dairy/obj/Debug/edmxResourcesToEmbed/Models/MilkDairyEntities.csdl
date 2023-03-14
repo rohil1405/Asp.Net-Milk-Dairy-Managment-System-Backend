@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MilkDairyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Dairy">
+    <Key>
+      <PropertyRef Name="DairyId" />
+    </Key>
+    <Property Name="DairyId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DairyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Taluka" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileId" Type="Int32" Nullable="false" />
+    <Property Name="SyncState" Type="Boolean" Nullable="false" />
+    <Property Name="Dealerld" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastSyncDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DeviceId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FCMToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeviceModel" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeviceCompany" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AndroidVersion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Refferalld" Type="Int32" Nullable="false" />
+    <Property Name="ReferralAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="WithdrawAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsSubscribe" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dairy4">
+    <Key>
+      <PropertyRef Name="DairyId" />
+    </Key>
+    <Property Name="DairyId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DairyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileId" Type="Int32" />
+    <Property Name="SyncState" Type="Boolean" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastSyncDate" Type="DateTime" Precision="0" />
+    <Property Name="DeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FCMToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AndroidVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Refferalld" Type="Int32" />
+    <Property Name="ReferralAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="WithdrawAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsSubscribe" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="DairyCustomer">
+    <Key>
+      <PropertyRef Name="DairyCustomerId" />
+    </Key>
+    <Property Name="DairyCustomerId" Type="Int32" Nullable="false" />
+    <Property Name="DairyId" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MilkType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankAcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankIfsc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileId" Type="Int32" />
+    <Property Name="SyncState" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedIP" Type="Int32" />
+    <Property Name="UpdatedIP" Type="Int32" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DairySubscription">
+    <Key>
+      <PropertyRef Name="DairySubscriptionId" />
+    </Key>
+    <Property Name="DairySubscriptionId" Type="Int32" Nullable="false" />
+    <Property Name="SubscriptionId" Type="Int32" />
+    <Property Name="DairyId" Type="Int32" />
+    <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriptionPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="MobileId" Type="Int32" />
+    <Property Name="SyncState" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedIP" Type="Int32" />
+    <Property Name="UpdatedIP" Type="Int32" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PrintAndMessageSetting">
+    <Key>
+      <PropertyRef Name="PrintSettingId" />
+    </Key>
+    <Property Name="PrintSettingId" Type="Int32" Nullable="false" />
+    <Property Name="DairyId" Type="Int32" />
+    <Property Name="PrintMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintBoldFont" Type="Boolean" />
+    <Property Name="PaymentRoundOfff" Type="Boolean" />
+    <Property Name="TranslateEverything" Type="Boolean" />
+    <Property Name="ShowLink" Type="Boolean" />
+    <Property Name="ShowSNFCLR" Type="Boolean" />
+    <Property Name="ShowRSLTR" Type="Boolean" />
+    <Property Name="ShowKGFAT" Type="Boolean" />
+    <Property Name="SMSMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileId" Type="Int32" />
+    <Property Name="SyncState" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedIp" Type="Int32" />
+    <Property Name="UpdatedIp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Subscription4">
+    <Key>
+      <PropertyRef Name="SubscriptionId" />
+    </Key>
+    <Property Name="SubscriptionId" Type="Int32" Nullable="false" />
+    <Property Name="Subscriptionprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoOfdays" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedIp" Type="Int32" />
+    <Property Name="UpdatedIP" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="MilkDairyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dairies" EntityType="Self.Dairy" />
+    <EntitySet Name="Dairy4" EntityType="Self.Dairy4" />
+    <EntitySet Name="DairyCustomers" EntityType="Self.DairyCustomer" />
+    <EntitySet Name="DairySubscriptions" EntityType="Self.DairySubscription" />
+    <EntitySet Name="PrintAndMessageSettings" EntityType="Self.PrintAndMessageSetting" />
+    <EntitySet Name="Subscription4" EntityType="Self.Subscription4" />
+    <FunctionImport Name="DairyCustomersSHOW" ReturnType="Collection(MilkDairyModel.DairyCustomersSHOW_Result)">
+      <Parameter Name="RowsOfPage" Mode="In" Type="Int32" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="ColName" Mode="In" Type="String" />
+      <Parameter Name="DairyId" Mode="In" Type="Int32" />
+      <Parameter Name="regex" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DairyCustomersSHOWL" ReturnType="Collection(MilkDairyModel.DairyCustomersSHOWL_Result)">
+      <Parameter Name="Dairyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="milkdairyfilter" ReturnType="Collection(MilkDairyModel.milkdairyfilter_Result)">
+      <Parameter Name="RowsOfPage" Mode="In" Type="Int32" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="Column" Mode="In" Type="String" />
+      <Parameter Name="pagematch" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DairyCustomersSHOW_Result">
+    <Property Type="Int32" Name="DairyCustomerId" Nullable="false" />
+    <Property Type="Int32" Name="DairyId" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MilkType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankAcNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankIfsc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MobileId" Nullable="true" />
+    <Property Type="Boolean" Name="SyncState" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedIP" Nullable="true" />
+    <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DairyCustomersSHOWL_Result">
+    <Property Type="Int32" Name="DairyCustomerId" Nullable="false" />
+    <Property Type="Int32" Name="DairyId" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MilkType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankAcNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankIfsc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MobileId" Nullable="true" />
+    <Property Type="Boolean" Name="SyncState" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedIP" Nullable="true" />
+    <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="milkdairyfilter_Result">
+    <Property Type="Int32" Name="SubscriptionId" Nullable="false" />
+    <Property Type="String" Name="Subscriptionprice" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NoOfdays" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedIp" Nullable="true" />
+    <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+  </ComplexType>
+</Schema>

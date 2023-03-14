@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MilkDairyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dairy">
+    <Key>
+      <PropertyRef Name="DairyId" />
+    </Key>
+    <Property Name="DairyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="DairyNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobileId" Type="int" Nullable="false" />
+    <Property Name="SyncState" Type="bit" Nullable="false" />
+    <Property Name="Dealerld" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LastSyncDate" Type="date" Nullable="false" />
+    <Property Name="DeviceId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FCMToken" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeviceModel" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="DeviceCompany" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="AndroidVersion" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Refferalld" Type="int" Nullable="false" />
+    <Property Name="ReferralAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="WithdrawAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsSubscribe" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dairy4">
+    <Key>
+      <PropertyRef Name="DairyId" />
+    </Key>
+    <Property Name="DairyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DairyNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileId" Type="int" />
+    <Property Name="SyncState" Type="bit" />
+    <Property Name="DealerId" Type="int" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastSyncDate" Type="date" />
+    <Property Name="DeviceId" Type="nvarchar" MaxLength="50" />
+    <Property Name="FCMToken" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceModel" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="AndroidVersion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refferalld" Type="int" />
+    <Property Name="ReferralAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="WithdrawAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsSubscribe" Type="bit" />
+  </EntityType>
+  <EntityType Name="DairyCustomers">
+    <Key>
+      <PropertyRef Name="DairyCustomerId" />
+    </Key>
+    <Property Name="DairyCustomerId" Type="int" Nullable="false" />
+    <Property Name="DairyId" Type="int" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MilkType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankAcNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankIfsc" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileId" Type="int" />
+    <Property Name="SyncState" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedIP" Type="int" />
+    <Property Name="UpdatedIP" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DairySubscription">
+    <Key>
+      <PropertyRef Name="DairySubscriptionId" />
+    </Key>
+    <Property Name="DairySubscriptionId" Type="int" Nullable="false" />
+    <Property Name="SubscriptionId" Type="int" />
+    <Property Name="DairyId" Type="int" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaidAmount" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubscriptionPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsPaid" Type="bit" />
+    <Property Name="MobileId" Type="int" />
+    <Property Name="SyncState" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedIP" Type="int" />
+    <Property Name="UpdatedIP" Type="int" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="PrintAndMessageSettings">
+    <Key>
+      <PropertyRef Name="PrintSettingId" />
+    </Key>
+    <Property Name="PrintSettingId" Type="int" Nullable="false" />
+    <Property Name="DairyId" Type="int" />
+    <Property Name="PrintMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintBoldFont" Type="bit" />
+    <Property Name="PaymentRoundOfff" Type="bit" />
+    <Property Name="TranslateEverything" Type="bit" />
+    <Property Name="ShowLink" Type="bit" />
+    <Property Name="ShowSNFCLR" Type="bit" />
+    <Property Name="ShowRSLTR" Type="bit" />
+    <Property Name="ShowKGFAT" Type="bit" />
+    <Property Name="SMSMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileId" Type="int" />
+    <Property Name="SyncState" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedIp" Type="int" />
+    <Property Name="UpdatedIp" Type="int" />
+  </EntityType>
+  <EntityType Name="Subscription4">
+    <Key>
+      <PropertyRef Name="SubscriptionId" />
+    </Key>
+    <Property Name="SubscriptionId" Type="int" Nullable="false" />
+    <Property Name="Subscriptionprice" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfdays" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedIp" Type="int" />
+    <Property Name="UpdatedIP" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <Function Name="DairyCustomersSHOW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RowsOfPage" Type="int" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="ColName" Type="varchar(max)" Mode="In" />
+    <Parameter Name="DairyId" Type="int" Mode="In" />
+    <Parameter Name="regex" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DairyCustomersSHOWL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Dairyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="milkdairyfilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RowsOfPage" Type="int" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="Column" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pagematch" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="MilkDairyModelStoreContainer">
+    <EntitySet Name="Dairy" EntityType="Self.Dairy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dairy4" EntityType="Self.Dairy4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DairyCustomers" EntityType="Self.DairyCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DairySubscription" EntityType="Self.DairySubscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrintAndMessageSettings" EntityType="Self.PrintAndMessageSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscription4" EntityType="Self.Subscription4" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

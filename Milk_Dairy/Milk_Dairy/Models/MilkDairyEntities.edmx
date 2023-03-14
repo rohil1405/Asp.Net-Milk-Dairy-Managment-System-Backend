@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MilkDairyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dairy">
+          <Key>
+            <PropertyRef Name="DairyId" />
+          </Key>
+          <Property Name="DairyId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="DairyNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Taluka" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileId" Type="int" Nullable="false" />
+          <Property Name="SyncState" Type="bit" Nullable="false" />
+          <Property Name="Dealerld" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LastSyncDate" Type="date" Nullable="false" />
+          <Property Name="DeviceId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FCMToken" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeviceModel" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="DeviceCompany" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="AndroidVersion" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Refferalld" Type="int" Nullable="false" />
+          <Property Name="ReferralAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WithdrawAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsSubscribe" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dairy4">
+          <Key>
+            <PropertyRef Name="DairyId" />
+          </Key>
+          <Property Name="DairyId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DairyNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Taluka" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileId" Type="int" />
+          <Property Name="SyncState" Type="bit" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastSyncDate" Type="date" />
+          <Property Name="DeviceId" Type="nvarchar" MaxLength="50" />
+          <Property Name="FCMToken" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeviceModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeviceCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="AndroidVersion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Refferalld" Type="int" />
+          <Property Name="ReferralAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="WithdrawAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsSubscribe" Type="bit" />
+        </EntityType>
+        <EntityType Name="DairyCustomers">
+          <Key>
+            <PropertyRef Name="DairyCustomerId" />
+          </Key>
+          <Property Name="DairyCustomerId" Type="int" Nullable="false" />
+          <Property Name="DairyId" Type="int" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MilkType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAcNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankIfsc" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileId" Type="int" />
+          <Property Name="SyncState" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="CreatedIP" Type="int" />
+          <Property Name="UpdatedIP" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DairySubscription">
+          <Key>
+            <PropertyRef Name="DairySubscriptionId" />
+          </Key>
+          <Property Name="DairySubscriptionId" Type="int" Nullable="false" />
+          <Property Name="SubscriptionId" Type="int" />
+          <Property Name="DairyId" Type="int" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaidAmount" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubscriptionPrice" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsPaid" Type="bit" />
+          <Property Name="MobileId" Type="int" />
+          <Property Name="SyncState" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedIP" Type="int" />
+          <Property Name="UpdatedIP" Type="int" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="PrintAndMessageSettings">
+          <Key>
+            <PropertyRef Name="PrintSettingId" />
+          </Key>
+          <Property Name="PrintSettingId" Type="int" Nullable="false" />
+          <Property Name="DairyId" Type="int" />
+          <Property Name="PrintMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintBoldFont" Type="bit" />
+          <Property Name="PaymentRoundOfff" Type="bit" />
+          <Property Name="TranslateEverything" Type="bit" />
+          <Property Name="ShowLink" Type="bit" />
+          <Property Name="ShowSNFCLR" Type="bit" />
+          <Property Name="ShowRSLTR" Type="bit" />
+          <Property Name="ShowKGFAT" Type="bit" />
+          <Property Name="SMSMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileId" Type="int" />
+          <Property Name="SyncState" Type="bit" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="CreatedIp" Type="int" />
+          <Property Name="UpdatedIp" Type="int" />
+        </EntityType>
+        <EntityType Name="Subscription4">
+          <Key>
+            <PropertyRef Name="SubscriptionId" />
+          </Key>
+          <Property Name="SubscriptionId" Type="int" Nullable="false" />
+          <Property Name="Subscriptionprice" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoOfdays" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="CreatedIp" Type="int" />
+          <Property Name="UpdatedIP" Type="int" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <Function Name="DairyCustomersSHOW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RowsOfPage" Type="int" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="ColName" Type="varchar(max)" Mode="In" />
+          <Parameter Name="DairyId" Type="int" Mode="In" />
+          <Parameter Name="regex" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="DairyCustomersSHOWL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Dairyid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="milkdairyfilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RowsOfPage" Type="int" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="Column" Type="varchar(max)" Mode="In" />
+          <Parameter Name="pagematch" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="MilkDairyModelStoreContainer">
+          <EntitySet Name="Dairy" EntityType="Self.Dairy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dairy4" EntityType="Self.Dairy4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DairyCustomers" EntityType="Self.DairyCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DairySubscription" EntityType="Self.DairySubscription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrintAndMessageSettings" EntityType="Self.PrintAndMessageSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscription4" EntityType="Self.Subscription4" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MilkDairyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dairy">
+          <Key>
+            <PropertyRef Name="DairyId" />
+          </Key>
+          <Property Name="DairyId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DairyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Taluka" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MobileId" Type="Int32" Nullable="false" />
+          <Property Name="SyncState" Type="Boolean" Nullable="false" />
+          <Property Name="Dealerld" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSyncDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DeviceId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FCMToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeviceModel" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeviceCompany" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AndroidVersion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Refferalld" Type="Int32" Nullable="false" />
+          <Property Name="ReferralAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WithdrawAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsSubscribe" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dairy4">
+          <Key>
+            <PropertyRef Name="DairyId" />
+          </Key>
+          <Property Name="DairyId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DairyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileId" Type="Int32" />
+          <Property Name="SyncState" Type="Boolean" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastSyncDate" Type="DateTime" Precision="0" />
+          <Property Name="DeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FCMToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AndroidVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Refferalld" Type="Int32" />
+          <Property Name="ReferralAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="WithdrawAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsSubscribe" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="DairyCustomer">
+          <Key>
+            <PropertyRef Name="DairyCustomerId" />
+          </Key>
+          <Property Name="DairyCustomerId" Type="Int32" Nullable="false" />
+          <Property Name="DairyId" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MilkType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankIfsc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileId" Type="Int32" />
+          <Property Name="SyncState" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedIP" Type="Int32" />
+          <Property Name="UpdatedIP" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DairySubscription">
+          <Key>
+            <PropertyRef Name="DairySubscriptionId" />
+          </Key>
+          <Property Name="DairySubscriptionId" Type="Int32" Nullable="false" />
+          <Property Name="SubscriptionId" Type="Int32" />
+          <Property Name="DairyId" Type="Int32" />
+          <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaidAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubscriptionPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsPaid" Type="Boolean" />
+          <Property Name="MobileId" Type="Int32" />
+          <Property Name="SyncState" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedIP" Type="Int32" />
+          <Property Name="UpdatedIP" Type="Int32" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PrintAndMessageSetting">
+          <Key>
+            <PropertyRef Name="PrintSettingId" />
+          </Key>
+          <Property Name="PrintSettingId" Type="Int32" Nullable="false" />
+          <Property Name="DairyId" Type="Int32" />
+          <Property Name="PrintMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintBoldFont" Type="Boolean" />
+          <Property Name="PaymentRoundOfff" Type="Boolean" />
+          <Property Name="TranslateEverything" Type="Boolean" />
+          <Property Name="ShowLink" Type="Boolean" />
+          <Property Name="ShowSNFCLR" Type="Boolean" />
+          <Property Name="ShowRSLTR" Type="Boolean" />
+          <Property Name="ShowKGFAT" Type="Boolean" />
+          <Property Name="SMSMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileId" Type="Int32" />
+          <Property Name="SyncState" Type="Boolean" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedIp" Type="Int32" />
+          <Property Name="UpdatedIp" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Subscription4">
+          <Key>
+            <PropertyRef Name="SubscriptionId" />
+          </Key>
+          <Property Name="SubscriptionId" Type="Int32" Nullable="false" />
+          <Property Name="Subscriptionprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoOfdays" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedIp" Type="Int32" />
+          <Property Name="UpdatedIP" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="MilkDairyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dairies" EntityType="Self.Dairy" />
+          <EntitySet Name="Dairy4" EntityType="Self.Dairy4" />
+          <EntitySet Name="DairyCustomers" EntityType="Self.DairyCustomer" />
+          <EntitySet Name="DairySubscriptions" EntityType="Self.DairySubscription" />
+          <EntitySet Name="PrintAndMessageSettings" EntityType="Self.PrintAndMessageSetting" />
+          <EntitySet Name="Subscription4" EntityType="Self.Subscription4" />
+          <FunctionImport Name="DairyCustomersSHOW" ReturnType="Collection(MilkDairyModel.DairyCustomersSHOW_Result)">
+            <Parameter Name="RowsOfPage" Mode="In" Type="Int32" />
+            <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+            <Parameter Name="ColName" Mode="In" Type="String" />
+            <Parameter Name="DairyId" Mode="In" Type="Int32" />
+            <Parameter Name="regex" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DairyCustomersSHOWL" ReturnType="Collection(MilkDairyModel.DairyCustomersSHOWL_Result)">
+            <Parameter Name="Dairyid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="milkdairyfilter" ReturnType="Collection(MilkDairyModel.milkdairyfilter_Result)">
+            <Parameter Name="RowsOfPage" Mode="In" Type="Int32" />
+            <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+            <Parameter Name="Column" Mode="In" Type="String" />
+            <Parameter Name="pagematch" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="DairyCustomersSHOW_Result">
+          <Property Type="Int32" Name="DairyCustomerId" Nullable="false" />
+          <Property Type="Int32" Name="DairyId" Nullable="true" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MilkType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankAcNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankIfsc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="MobileId" Nullable="true" />
+          <Property Type="Boolean" Name="SyncState" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CreatedIP" Nullable="true" />
+          <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="DairyCustomersSHOWL_Result">
+          <Property Type="Int32" Name="DairyCustomerId" Nullable="false" />
+          <Property Type="Int32" Name="DairyId" Nullable="true" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MilkType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankAcNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankIfsc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="MobileId" Nullable="true" />
+          <Property Type="Boolean" Name="SyncState" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CreatedIP" Nullable="true" />
+          <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="milkdairyfilter_Result">
+          <Property Type="Int32" Name="SubscriptionId" Nullable="false" />
+          <Property Type="String" Name="Subscriptionprice" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NoOfdays" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CreatedIp" Nullable="true" />
+          <Property Type="Int32" Name="UpdatedIP" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MilkDairyModelStoreContainer" CdmEntityContainer="MilkDairyEntities">
+          <EntitySetMapping Name="Dairies">
+            <EntityTypeMapping TypeName="MilkDairyModel.Dairy">
+              <MappingFragment StoreEntitySet="Dairy">
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="DairyNumber" ColumnName="DairyNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="Dealerld" ColumnName="Dealerld" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastSyncDate" ColumnName="LastSyncDate" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="FCMToken" ColumnName="FCMToken" />
+                <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+                <ScalarProperty Name="DeviceCompany" ColumnName="DeviceCompany" />
+                <ScalarProperty Name="AndroidVersion" ColumnName="AndroidVersion" />
+                <ScalarProperty Name="Refferalld" ColumnName="Refferalld" />
+                <ScalarProperty Name="ReferralAmount" ColumnName="ReferralAmount" />
+                <ScalarProperty Name="WithdrawAmount" ColumnName="WithdrawAmount" />
+                <ScalarProperty Name="IsSubscribe" ColumnName="IsSubscribe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dairy4">
+            <EntityTypeMapping TypeName="MilkDairyModel.Dairy4">
+              <MappingFragment StoreEntitySet="Dairy4">
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="DairyNumber" ColumnName="DairyNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastSyncDate" ColumnName="LastSyncDate" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="FCMToken" ColumnName="FCMToken" />
+                <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+                <ScalarProperty Name="DeviceCompany" ColumnName="DeviceCompany" />
+                <ScalarProperty Name="AndroidVersion" ColumnName="AndroidVersion" />
+                <ScalarProperty Name="Refferalld" ColumnName="Refferalld" />
+                <ScalarProperty Name="ReferralAmount" ColumnName="ReferralAmount" />
+                <ScalarProperty Name="WithdrawAmount" ColumnName="WithdrawAmount" />
+                <ScalarProperty Name="IsSubscribe" ColumnName="IsSubscribe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DairyCustomers">
+            <EntityTypeMapping TypeName="MilkDairyModel.DairyCustomer">
+              <MappingFragment StoreEntitySet="DairyCustomers">
+                <ScalarProperty Name="DairyCustomerId" ColumnName="DairyCustomerId" />
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MilkType" ColumnName="MilkType" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BankAcNo" ColumnName="BankAcNo" />
+                <ScalarProperty Name="BankIfsc" ColumnName="BankIfsc" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIP" ColumnName="CreatedIP" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DairySubscriptions">
+            <EntityTypeMapping TypeName="MilkDairyModel.DairySubscription">
+              <MappingFragment StoreEntitySet="DairySubscription">
+                <ScalarProperty Name="DairySubscriptionId" ColumnName="DairySubscriptionId" />
+                <ScalarProperty Name="SubscriptionId" ColumnName="SubscriptionId" />
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="SubscriptionPrice" ColumnName="SubscriptionPrice" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedIP" ColumnName="CreatedIP" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrintAndMessageSettings">
+            <EntityTypeMapping TypeName="MilkDairyModel.PrintAndMessageSetting">
+              <MappingFragment StoreEntitySet="PrintAndMessageSettings">
+                <ScalarProperty Name="PrintSettingId" ColumnName="PrintSettingId" />
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="PrintMethod" ColumnName="PrintMethod" />
+                <ScalarProperty Name="PrintBoldFont" ColumnName="PrintBoldFont" />
+                <ScalarProperty Name="PaymentRoundOfff" ColumnName="PaymentRoundOfff" />
+                <ScalarProperty Name="TranslateEverything" ColumnName="TranslateEverything" />
+                <ScalarProperty Name="ShowLink" ColumnName="ShowLink" />
+                <ScalarProperty Name="ShowSNFCLR" ColumnName="ShowSNFCLR" />
+                <ScalarProperty Name="ShowRSLTR" ColumnName="ShowRSLTR" />
+                <ScalarProperty Name="ShowKGFAT" ColumnName="ShowKGFAT" />
+                <ScalarProperty Name="SMSMethod" ColumnName="SMSMethod" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIp" ColumnName="CreatedIp" />
+                <ScalarProperty Name="UpdatedIp" ColumnName="UpdatedIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscription4">
+            <EntityTypeMapping TypeName="MilkDairyModel.Subscription4">
+              <MappingFragment StoreEntitySet="Subscription4">
+                <ScalarProperty Name="SubscriptionId" ColumnName="SubscriptionId" />
+                <ScalarProperty Name="Subscriptionprice" ColumnName="Subscriptionprice" />
+                <ScalarProperty Name="NoOfdays" ColumnName="NoOfdays" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIp" ColumnName="CreatedIp" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DairyCustomersSHOW" FunctionName="MilkDairyModel.Store.DairyCustomersSHOW">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MilkDairyModel.DairyCustomersSHOW_Result">
+                <ScalarProperty Name="DairyCustomerId" ColumnName="DairyCustomerId" />
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MilkType" ColumnName="MilkType" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BankAcNo" ColumnName="BankAcNo" />
+                <ScalarProperty Name="BankIfsc" ColumnName="BankIfsc" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIP" ColumnName="CreatedIP" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DairyCustomersSHOWL" FunctionName="MilkDairyModel.Store.DairyCustomersSHOWL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MilkDairyModel.DairyCustomersSHOWL_Result">
+                <ScalarProperty Name="DairyCustomerId" ColumnName="DairyCustomerId" />
+                <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MilkType" ColumnName="MilkType" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BankAcNo" ColumnName="BankAcNo" />
+                <ScalarProperty Name="BankIfsc" ColumnName="BankIfsc" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MobileId" ColumnName="MobileId" />
+                <ScalarProperty Name="SyncState" ColumnName="SyncState" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIP" ColumnName="CreatedIP" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="milkdairyfilter" FunctionName="MilkDairyModel.Store.milkdairyfilter">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MilkDairyModel.milkdairyfilter_Result">
+                <ScalarProperty Name="SubscriptionId" ColumnName="SubscriptionId" />
+                <ScalarProperty Name="Subscriptionprice" ColumnName="Subscriptionprice" />
+                <ScalarProperty Name="NoOfdays" ColumnName="NoOfdays" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedIp" ColumnName="CreatedIp" />
+                <ScalarProperty Name="UpdatedIP" ColumnName="UpdatedIP" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
