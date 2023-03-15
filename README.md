@@ -103,9 +103,20 @@ I have created Milk Dairy Managment System Using Asp.Net
 - Prevent and reduce human Error
 - Reduce manual work 
 
+## Future Enhancement
 
+- Client can see purchase sell milk show to online. 
+- Client can her payment direct in her account. 
+- Customer Also be an user of the system. 
+- System need to be improve performance.
 
+## Limitations…
 
+- Require Light Connection.
+- Mobile must require..
+- Client must have good command on English and computer..
+
+## 
 
 
 
