@@ -85,17 +85,27 @@ I have created Milk Dairy Managment System Using Asp.Net
 - **Go to Milk Dairy Planning Excel sheet**
 
 
+## Benefits…
+
+- Rural Area People Survive option..
+- Paperwork Reduction
+- Improved Data Quality 
+- Reduce Transportation Expense
+- View Reports daily basis 
+- Error Reduction
+
+## Functional Components..
+
+- To facilitate easily maintenance of records of various Account Members.
+- Maintain Daily inventory reports and record of Members.
+- Quick access of all records. 
+- generate Regular basis Salary
+- Prevent and reduce human Error
+- Reduce manual work 
 
 
 
 
-
--
-
-
-
-
--
 
 
 
